@@ -47,8 +47,8 @@ public class HtmlToPdfUtils {
     }
 
     public static void main(String[] args){
-        File file = new File("D:\\test.html");
-        String pdfPath = "D:\\testPdf.pdf";
+        File file = new File("D:\\zzz\\index.html");
+        String pdfPath = "D:\\test6i.pdf";
         try{
             htmlToPdf(file, pdfPath);
         }catch (Exception e){

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>百度一下，你就知道</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body>
+		<!--百度页面顶部导航栏-->
+		<!--导航栏包括 新闻 hao123 地图 视频 贴吧 学术 登陆 设置 更多产品-->
+	<div class="baidu_nav" style="text_align:center">
+		<!--nav导航栏标签,
+		如果想要对整体的导航进行移动位置，可以对整个的a标签添加上一个大的盒子div，
+		这样对整体div的移动就可以了-->
+		<nav calss="top_nav" style="text_align:rigth">
+			<p align="right"><!--将整个nav标签的文本都移到右边一栏-->
+			<a href="http://news.baidu.com/">新闻</a>
+			<a href="https://www.hao123.com/">hao123</a>
+			<a href="https://map.baidu.com/">地图</a>
+			<a href="http://v.baidu.com/">视频</a>
+			<a href="https://tieba.baidu.com/index.html">贴吧</a>
+			<a href="http://xueshu.baidu.com/">学术</a>
+			<a href="javascript:;">登陆</a>
+			<a>设置
+				<select>
+				<option>搜索设置</option>
+				<option>高级搜索</option>
+				<option>关闭预测</option>
+				<option>隐私设置</option>
+				</select>
+			</a>
+			<a href="https://www.baidu.com/more/" style="color:blue">更多产品</a>
+			</p>
+		</nav>
+	</div>
+	<!--百度顶部导航栏结束-->
+	
+	<!--百度中间部分包含logo，搜索栏开始-->
+	<div align="center">
+		<!--插入logo-->
+		<div class="logo">
+			<img class="baidu_logo" src="http://www.baidu.com/img/bd_logo1.png" width="255" height="110"/>
+		</div>
+		<!--插入图片时尝试了许多次老是会显示不出来，后来便直接把百度原界面上的图片链接给复制了下来-->
+		<!--<img>为一个空标签，即它只包含属性，不包含闭合标签，需在页面上显示图片时，需要使用源属性src
+		（源属性的值是图像的 URL 地址。定义图像的语法是：<img src="url" />）-->
+		<!--class属性和src属性之间不能加逗号，否则图片将会无法显示出来-->
+		<!--【不明白的地方】：在宽度和高度之间加上逗号，图片显示的大小不同，对此不太理解-->
+		<!--logo结束-->
+		
+		<!--搜索栏-->
+		<!--搜索栏包含搜索文本框，搜索按钮及相机-->
+		<div class="search_box">
+			<form action="/demo/demo_form.asp">
+				<!--网页开发语言表单form，action，指定当这个表单提交到服务器端后处理数据的页面
+				method，指定从客户端传递数据到服务器端的方法，有两种get 和post
+				get,如http://www.baidu.com/?word=百度是什么意思；post,则看不到数据
+				然后可在服务器端用request对象检索传递过来的数据。-->
+				<input type="text" class="search_input" name="wd" />
+				<input type="button" class="search_buton" width="32px" height="32px" value="百度一下" />
+			</form>
+		</div>
+		
+		<!--百度搜索框下面的二维码以及链接-->
+		<div class="bottom">
+			<!--二维码-->
+			<ul>
+				<li class="bd_qrcode">
+					<img src="file:///C:/Users/20544/Desktop/二维码.PNG" width="70px" heigth="70px"/>
+				</li>
+				<p>百度</p>
+			</ul>
+			
+			<!--链接部分-->
+			<div class="bd_lj">
+				<p>
+				<!--<p>此标签与百度原网页所用一样，但具体是为什么，还不清楚-->
+				<a href="https://www.baidu.com/cache/sethelp/help.html">把百度设置为主页</a>
+				<a href="http://home.baidu.com/">关于百度</a>
+				<!-- <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-irhome">About Baidu</a> -->
+				<a href="http://e.baidu.com/?refer=888">百度推广</a>
+				</p>
+				<!--下面的反馈与必读部分-->
+				<p class="bd_nr">
+					@2019 Baidu
+					<a href="https://www.baidu.com/duty/">使用百度前必读</a>
+					<a href="http://jianyi.baidu.com/">意见反馈</a>
+					京ICP证030173号
+					<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a>
+				</p>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
