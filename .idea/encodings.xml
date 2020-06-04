@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$USER_HOME$/Documents/WeChat Files/shw_zzZZZ/FileStorage/File/2020-06/C27-2020-BFA8030AFFFFFFFFE93CFBBA00000003/{09A8A40C-0000-0000-641D-958BFFFFFFE6}/文件处理表.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/文件处理表(不行).html" charset="GBK" />
+  </component>
 </project>
