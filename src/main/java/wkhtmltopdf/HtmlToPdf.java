@@ -55,7 +55,7 @@ public class HtmlToPdf {
     }
 
     public static void main(String[] args) {
-        HtmlToPdf.convert("F:\\_project\\_test_project\\util_class_collection\\src\\main\\resources\\index.html", "D:\\index.pdf");
+        HtmlToPdf.convert("F:/_project/51_mall/html/index.html", "D:/mall.pdf");
     }
 }
 
