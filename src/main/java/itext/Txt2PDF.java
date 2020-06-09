@@ -99,7 +99,6 @@ public class Txt2PDF {
         String text = "F:\\_project\\_test_project\\util_class_collection\\src\\main\\resources\\txt\\news.txt";
         String pdf = PDFTIMEDIR + "news.pdf";
         System.out.println(text + " encoding:" +getFilecharset(new File(text)));
-
         text2pdf(text, pdf);
         String text2 = "F:\\_project\\_test_project\\util_class_collection\\src\\main\\resources\\txt\\xiaoshuo.txt";
         String pdf2 = PDFTIMEDIR + "xiaoshuo.pdf";
