@@ -36,6 +36,6 @@ public class Html2pdf {
 
 
     public static void main(String[] args) throws IOException {
-        parseHtml2Pdf("http://www.baidu.com");
+        parseHtml2Pdf("http://127.0.0.1:80");
     }
 }
