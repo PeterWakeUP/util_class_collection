@@ -10,16 +10,21 @@ import java.util.*;
  */
 public class TreeUtilExtend {
 
+    /**
+     * 根据id pid 转成树形结构
+     * 转换算法核心: 利用对象引用，遍历时将树拼接好，然后将根节点加入到nodes中
+     * @param map
+     * @param <T>
+     * @return
+     */
     public static <T extends TreeNodeExtend> List<T> getTree(Map<Long, T> map){
-        //根据id pid 转成树形结构
-        //转换算法核心: 利用对象引用，遍历时将树拼接好，然后将根节点加入到nodes中
+
         List<T> nodes = new ArrayList<>();
         for (Map.Entry<Long, T> en : map.entrySet()) {
             T node = en.getValue();
             T pTreeNodeExtend = map.get(node.getPid());
 
-            if (Objects.nonNull(pTreeNodeExtend)) {
-                //含有父节点就是子节点
+            if (Objects.nonNull(pTreeNodeExtend)) { //含有父节点就是子节点
                 List<T> sons = pTreeNodeExtend.getChildren();
                 if (Objects.isNull(sons)) {
                     sons = new ArrayList<>();
@@ -35,8 +40,7 @@ public class TreeUtilExtend {
                 }
                 sons.add(i, node);
 
-            } else {
-                //不是子节点就是父节点
+            } else { //不是子节点就是父节点
                 int i;
                 for(i=0; i<nodes.size(); i++){
                     //按顺序插入
