@@ -27,7 +27,7 @@ public class PDF2JPG {
         try{
             long start = System.currentTimeMillis();
             //pdf路径
-            stream = new FileInputStream(new File("D:/pdf.pdf"));
+            stream = new FileInputStream(new File("D:/zzz/pdf.pdf"));
             // 加载解析PDF文件
             doc = PDDocument.load(stream);
             PDFRenderer pdfRenderer = new PDFRenderer(doc);
