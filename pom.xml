@@ -101,4 +101,13 @@
 
     </dependencies>
 
+    <!--<repositories>
+        <repository>
+            <id>com.e-iceblue</id>
+            <name>e-iceblue</name>
+            <url>http://repo.e-iceblue.cn/repository/maven-public/</url>
+        </repository>
+    </repositories>-->
+
+
 </project>
