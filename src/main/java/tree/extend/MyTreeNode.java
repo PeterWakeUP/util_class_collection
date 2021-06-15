@@ -22,6 +22,10 @@ public class MyTreeNode extends TreeNodeExtend{
         this.detail = detail;
     }
 
+    @Override
+    public int getSortValue() {
+        return getName().hashCode();
+    }
 
     public static void main(String[] args){
         // 存储: id => node

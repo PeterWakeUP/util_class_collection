@@ -55,4 +55,9 @@ public class TreeNodeExtend<T extends TreeNodeExtend> {
     public String toString() {
         return "TreeNode [id=" + id + ", name=" + name + ", pid=" + pid + ", children=" + children + "]";
     }
+
+
+    public int getSortValue(){
+        return id.intValue();
+    }
 }

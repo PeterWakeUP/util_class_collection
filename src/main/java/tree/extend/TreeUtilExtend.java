@@ -4,6 +4,7 @@ package tree.extend;
 import com.alibaba.fastjson.JSON;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * 将｛id:1, name:"shw", pid:0｝的Map数据转化成tree层级嵌套数据
@@ -34,7 +35,7 @@ public class TreeUtilExtend {
                 int i;
                 for(i=0; i<sons.size(); i++){
                     //按顺序插入
-                    if(sons.get(i).getId() > node.getId()){
+                    if(sons.get(i).getSortValue() > node.getSortValue()){
                         break;
                     }
                 }
@@ -44,7 +45,52 @@ public class TreeUtilExtend {
                 int i;
                 for(i=0; i<nodes.size(); i++){
                     //按顺序插入
-                    if(nodes.get(i).getId() > node.getId()){
+                    if(nodes.get(i).getSortValue() > node.getSortValue()){
+                        break;
+                    }
+                }
+                nodes.add(i, node);
+            }
+        }
+        return nodes;
+    }
+
+    /**
+     * 根据id pid 转成树形结构
+     * 转换算法核心: 利用对象引用，遍历时将树拼接好，然后将根节点加入到nodes中
+     * @param list
+     * @param <T>
+     * @return
+     */
+    public static <T extends TreeNodeExtend> List<T> getTree(List<T> list){
+        List<T> nodes = new ArrayList<>();
+
+        Map<Long, T> map = list.stream().collect(Collectors.toMap(x->x.getId(), x->x));
+        for (Map.Entry<Long, T> en : map.entrySet()) {
+            T node = en.getValue();
+            T pTreeNodeExtend = map.get(node.getPid());
+
+            if (Objects.nonNull(pTreeNodeExtend)) { //含有父节点就是子节点
+                List<T> sons = pTreeNodeExtend.getChildren();
+                if (Objects.isNull(sons)) {
+                    sons = new ArrayList<>();
+                    pTreeNodeExtend.setChildren(sons);
+                }
+
+                int i;
+                for(i=0; i<sons.size(); i++){
+                    //按顺序插入
+                    if(sons.get(i).getSortValue() > node.getSortValue()){
+                        break;
+                    }
+                }
+                sons.add(i, node);
+
+            } else { //不是子节点就是父节点
+                int i;
+                for(i=0; i<nodes.size(); i++){
+                    //按顺序插入
+                    if(nodes.get(i).getSortValue() > node.getSortValue()){
                         break;
                     }
                 }

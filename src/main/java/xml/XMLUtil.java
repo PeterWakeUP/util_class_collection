@@ -15,7 +15,7 @@ public class XMLUtil {
         // 先创建一下XStream对象
         XStream xStream = new XStream(new DomDriver());
         // 设置Person类的别名
-        xStream.alias(alias, clazz);
+        xStream.alias(alias, clazz);  //xStream.alias(alias, obj.getClass());
         // 将Java对象序列化成XML
         String xmlStr = xStream.toXML(obj);
 
